@@ -8,14 +8,14 @@ Lunch_menu_controller.$inject = ['$scope', '$filter'];
 function Lunch_menu_controller ($scope, $filter) {
   $scope.display_message = function () {
   	var dishes_entered = $scope.dishes;
-    var dishes_array = dishes_entered.split(',');
     if((dishes_entered=="") || !(dishes_entered))
     {
     	$scope.message = "Please enter data first";
     	return
     }
     else{
-    	 if(dishes_array.length>3)
+      var dishes_array = dishes_entered.split(',');
+    	if(dishes_array.length>3)
 	    {
 	    	$scope.message = "Too much!";
 	    }
