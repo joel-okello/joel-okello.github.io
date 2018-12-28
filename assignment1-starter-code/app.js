@@ -14,15 +14,18 @@ function Lunch_menu_controller ($scope, $filter) {
     	$scope.message = "Please enter data first";
     	return
     }
+    else{
+    	 if(dishes_array.length>3)
+	    {
+	    	$scope.message = "Too much!";
+	    }
+		else
+		{
+			$scope.message = "Enjoy!";
+		}
 
-    if(dishes_array.length>3)
-    {
-    	$scope.message = "Too much!";
     }
-	else
-	{
-		$scope.message = "Enjoy!";
-	}
+   
 
   };
 
