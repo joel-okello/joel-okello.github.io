@@ -9,7 +9,7 @@ function Lunch_menu_controller ($scope, $filter) {
   $scope.display_message = function () {
   	var dishes_entered = $scope.dishes;
     var dishes_array = dishes_entered.split(',');
-    if(dishes_entered == "")
+    if((dishes_entered=="") || !(dishes_entered))
     {
     	$scope.message = "Please enter data first";
     	return
