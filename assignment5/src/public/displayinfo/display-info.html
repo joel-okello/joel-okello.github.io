@@ -1,0 +1,55 @@
+<div class="container" ng-if="displayinfoCtrl.user_registered()">
+  <h2  class="text-center">Your information</h2>
+</div>
+
+
+
+
+
+<div class="container" ng-if="displayinfoCtrl.user_registered()">
+  
+
+<div >
+<div class="col-6">First Name</div>
+<div class="col-6"> {{displayinfoCtrl.user_info.firstname}}</div>
+<br>
+<hr>
+<div class="col-6">Last Name</div>
+<div class="col-6"> {{displayinfoCtrl.user_info.lastname}}</div>
+<br>
+<hr>
+<div class="col-6"> Email</div>
+<div class="col-6"> {{displayinfoCtrl.user_info.email}}</div>
+<br>
+<hr>
+<div class="col-6">Phone</div>
+<div class="col-6"> {{displayinfoCtrl.user_info.phone}}</div>
+<br>
+<hr>
+<div class="row">
+	<menu-item 
+             menu-item="displayinfoCtrl.menuitemsinfo">
+  </menu-item>
+</div>
+
+
+
+
+<br>
+<hr>
+
+</div>
+</div>
+
+
+<div class="container" ng-if="!displayinfoCtrl.user_registered()">
+  <h2  class="text-center">Not Signed Up Yet.<a ui-sref="public.signup"> Sign up Now!</a></h2>
+</div>
+
+
+
+
+
+
+
+

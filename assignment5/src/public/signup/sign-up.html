@@ -1,0 +1,119 @@
+<div class="container" ng-if="signupCtrl.user_registered()">
+  <h2  class="text-center">Your information has been saved</h2>
+</div>
+
+
+<div class="container" >
+  <h2  class="text-center">Sign Up Form</h2>
+  <div >
+      <form role="form" name='signupForm' novalidate>
+          <div class="form-group">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" name="firstname" class="form-control" id="exampleInputEmail1" placeholder="Pick a firstname"
+            ng-model="signupCtrl.firstname"
+            required
+            minlength="4"
+            ng-maxlength="20">
+            <span
+              ng-if="(signupForm.firstname.$error.minlength || signupForm.firstname.$error.required) && signupForm.firstname.$touched">
+              firstname must be at least 4 characters long
+            </span>
+            <span ng-if="signupForm.firstname.$error.maxlength && signupForm.firstname.$touched">
+            firstname must not be longer than 20 characters
+            </span>
+
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Last Name</label>
+            <input type="text" name="lastname" class="form-control" id="exampleInputEmail1" placeholder="Pick a lastname"
+            ng-model="signupCtrl.lastname"
+            required
+            minlength="4"
+            ng-maxlength="20">
+            <span
+              ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required) && signupForm.lastname.$touched">
+              lastname must be at least 4 characters long
+            </span>
+            <span ng-if="signupForm.lastname.$error.maxlength && signupForm.lastname.$touched">
+            lastname must not be longer than 20 characters
+            </span>
+
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Phone Number</label>
+            <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Pick a phone"
+            ng-model="signupCtrl.phone"
+            required
+            minlength="10"
+            ng-maxlength="10">
+            <span
+              ng-if="(signupForm.phone.$error.minlength || signupForm.phone.$error.required) && signupForm.phone.$touched">
+              phone number must be  10 characters long
+            </span>
+            <span ng-if="signupForm.phone.$error.maxlength && signupForm.phone.$touched">
+            phone number must  be  10 characters
+            </span>
+
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Pick a email"
+            ng-model="signupCtrl.email"
+            required
+            minlength="6"
+            >
+            <span
+              ng-if="(signupForm.email.$error.minlength || signupForm.email.$error.required) && signupForm.email.$touched">
+              email number must be at least 6 characters long
+            </span>
+
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Favorite Menu Item Short Name</label>
+            <input type="text" name="menu_item_name" class="form-control" id="exampleInputEmail1" placeholder="Pick a menu_item_name"
+            ng-model="signupCtrl.menu_item_name"
+            required
+            minlength="2"
+            ng-maxlength="6">
+            <span
+              ng-if="(signupForm.menu_item_name.$error.minlength || signupForm.menu_item_name.$error.required) && signupForm.menu_item_name.$touched">
+              menu item name must be at least 2 characters long
+            </span>
+            <span ng-if="signupForm.menu_item_name.$error.maxlength && signupForm.menu_item_name.$touched">
+            menu item name must not be longer than 6 characters
+            </span>
+            <span ng-if="(signupCtrl.form_submitted()&&(!signupCtrl.user_registered()))">
+            menu item name not found
+            </span>
+
+            
+
+          </div>
+          <button type="submit" class="btn btn-default" 
+          ng-disabled="signupForm.$invalid"
+          ng-click="signupCtrl.submit()">Submit</button>
+          <div style="margin-top: 10px;">
+            Form valid? {{ signupForm.$valid }}
+          </div>
+
+        </form>
+
+        <div style="margin-top: 10px;" ng-if="signupCtrl.user_registered()" class="text-sucess">
+          Your information has been saved
+
+        </div>
+
+         <div style="margin-top: 10px;" ng-if="!signupCtrl.user_registered()" class="text-danger">
+          Your information has not been saved
+
+        </div>
+
+        
+
+</div>
+</div
+
